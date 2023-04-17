@@ -1,12 +1,12 @@
 local Translations = {
     text3d = {
-        ["3dtext"] = "~w~[G] ~q~Tvätta pengar",
-        ["3dtext_left"] = "%{timeleft} sekunder kvar",
-        ["3dtext_done"] = "~w~[G] ~q~Ta ut pengarna",
+        ["3dtext"] = "~w~[G] ~q~Wash money",
+        ["3dtext_left"] = "%{timeleft} secunds left",
+        ["3dtext_done"] = "~w~[G] ~q~Take the money",
     },
     notify = {
-        ["no_markedbills"] = "Du har inga svarta pengar!",
-        ["Start_washing"] = "Du börjar att tvätta pengar av ett värde av %{value}",
+        ["no_markedbills"] = "You don'y have any marked bills!",
+        ["Start_washing"] = "You started to wash money with the value of %{value}",
     }
 }
 Lang = Locale:new({
