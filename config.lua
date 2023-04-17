@@ -1,6 +1,6 @@
 Config = {}
 
-Config.key = 47
+Config.key = 47 -- https://docs.fivem.net/docs/game-references/controls/
 
 Config.Time = 500 -- Time in seconds the washing should take
 
