@@ -1,6 +1,6 @@
 # cr-moneywash
 
-Place a marker at a given coord
+wash marked bills
 
 # Installation
 
