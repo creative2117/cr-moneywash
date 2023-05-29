@@ -3,6 +3,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 RegisterServerEvent("cr-moneywash:server:checkinv", function(k)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
     local markedBills = Player.Functions.GetItemByName("markedbills")
     
     if markedBills ~= nil then
@@ -21,5 +22,7 @@ end)
 RegisterServerEvent("cr-moneywash:server:GiveMoney", function(worth)
     local src = source
     local player = QBCore.Functions.GetPlayer(src)
-    player.Functions.AddMoney("cash", worth)
+    if player then
+        player.Functions.AddMoney("cash", worth)
+    end
 end)
