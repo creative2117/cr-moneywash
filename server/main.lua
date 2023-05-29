@@ -12,17 +12,18 @@ RegisterServerEvent("cr-moneywash:server:checkinv", function(k)
         worth = worth * Config.percent
         Player.Functions.RemoveItem('markedbills', amt)
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "remove")
-        TriggerClientEvent('cr-moneywash:client:startTimer', src, worth, k)
+        TriggerClientEvent('cr-moneywash:client:startTimer', -1, worth, k)
         TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.Start_washing", {value = worth}), 'primary')
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.no_markedbills"), "error")
     end
 end)
 
-RegisterServerEvent("cr-moneywash:server:GiveMoney", function(worth)
+RegisterServerEvent("cr-moneywash:server:GiveMoney", function(worth, k)
     local src = source
     local player = QBCore.Functions.GetPlayer(src)
     if player then
         player.Functions.AddMoney("cash", worth)
+        TriggerClientEvent("cr-moneywash:client:resetWash", -1, k)
     end
 end)
